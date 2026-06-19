@@ -17,7 +17,7 @@ export default function GenerateItinerary() {
       setLoading(true);
 
       // =========================
-      // 1️⃣ UPLOAD FILE
+      //  UPLOAD FILE
       // =========================
       const formData = new FormData();
       formData.append("documents", file);
@@ -30,7 +30,6 @@ export default function GenerateItinerary() {
 
       console.log("UPLOAD RESPONSE:", uploadRes.data);
 
-      // ✅ SAFE ACCESS
       const uploadedDoc = uploadRes.data.documents?.[0];
 
       if (!uploadedDoc) {
@@ -44,7 +43,7 @@ export default function GenerateItinerary() {
       }
 
       // =========================
-      // 2️⃣ EXTRACT
+      //  EXTRACT
       // =========================
       const extractRes = await api.post(`bookings/${docId}/extract`);
 
@@ -57,7 +56,7 @@ export default function GenerateItinerary() {
       }
 
       // =========================
-      // 3️⃣ GENERATE ITINERARY
+      //  GENERATE ITINERARY
       // =========================
       const generateRes = await api.post("/itinerary/generate", {
   extractedText: extractedData,
@@ -72,7 +71,7 @@ export default function GenerateItinerary() {
       }
 
       // =========================
-      // 4️⃣ NAVIGATE
+      //  NAVIGATE
       // =========================
       navigate(`/itinerary/${itineraryId}`);
 
