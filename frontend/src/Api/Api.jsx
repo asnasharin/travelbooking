@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://ai-travelplanner-jpuf.onrender.com/",
+  baseURL: "https://ai-travelplanner-jpuf.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
