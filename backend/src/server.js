@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDb();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://ai-travelplanner-1-pero.onrender.com",
   credentials: true,
 }));
 
